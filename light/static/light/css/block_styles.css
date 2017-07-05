@@ -62,5 +62,35 @@ body {
     display: inline-block;
     box-shadow: 5px 5px 5px black;
     overflow: hidden;
-
+}
+/*REVIEWS PAGE EDITS*/
+.main_reviews_container {
+    width: 100vw;
+    height: 100vh;
+}
+.popular_reviews {
+    width: 40vw;
+    height: 45vh;
+    background: yellow;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 2%;
+    margin-left: 3%;
+}
+.popular_reviews h1 {
+    text-align: center;
+    margin-top: 2%;
+}
+.all_reviews {
+    width: 50vw;
+    height: 65vh;
+    background: pink;
+    display: inline-block;
+    margin-top: 10%;
+    margin-left: 5%;
+    vertical-align: bottom;
+}
+.all_reviews h1 {
+    text-align: center;
+    margin-top: 2%;
 }

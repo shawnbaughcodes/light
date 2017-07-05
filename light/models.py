@@ -43,3 +43,8 @@ class User(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     objects = UserManager()
 # REVIEWS MODEL
+class Review(models.Model):
+    content = models.CharField(max_length=1000)
+    user = models.ForeignKey(User, related_name='reviews')
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)

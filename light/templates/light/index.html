@@ -4,18 +4,70 @@
         <meta charset="utf-8">
         {%load staticfiles%}
         <link rel="stylesheet" href="{% static 'light/css/styles.css' %}">
+        <!-- JQUERY -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!-- SCRIPT PAGE -->
+        <script type="text/javascript" src="{% static 'light/js/script.js' %}">
+
+        </script>
 
         <title>Light</title>
     </head>
     <body>
         <div class="index_container">
+            <a name="light"></a>
             <div class="heading_container">
                 <h1>Light</h1>
-                <h3 id="enter_button">Enter</h3>
+                <a href="#enter">
+                    <h3 id="enter_button">Enter</h3>
+                </a>
             </div>
         </div>
-        <div class="reg_and_login_container">
-            
+        <!-- REGISTERATION AND LOGIN -->
+        <div class="reg_and_login_container" hidden>
+            <a name="enter"></a>
+            <div class="register">
+                <form class="" action="/process" method="post">
+                    {% csrf_token %}
+                    <div class="">
+                        Name:
+                        <input type="text" name="name">
+                    </div>
+                    <div class="">
+                        Email:
+                        <input type="email" name="email">
+                    </div>
+                    <div class="">
+                        Password:
+                        <input type="password" name="password">
+                    </div>
+                    <div class="">
+                        Password Confirmation:
+                        <input type="password" name="password_confirmation">
+                    </div>
+                    <input type="submit" value="Register">
+                </form>
+                {%for error in messages%}
+                <p id="red">{{error}}</p>
+                {%endfor%}
+            </div>
+            <div class="login">
+                <form class="" action="/login" method="post">
+                    {% csrf_token %}
+                    <div class="">
+                        Email:
+                        <input type="email" name="email">
+                    </div>
+                    <div class="">
+                        Password:
+                        <input type="password" name="password">
+                    </div>
+                    <input type="submit" value="Login">
+                </form>
+            </div>
+            <a href="#light">
+                <h1 id="cancel_button">Cancel</h1>
+            </a>
         </div>
     </body>
 </html>

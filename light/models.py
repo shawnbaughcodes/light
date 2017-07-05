@@ -16,7 +16,6 @@ class UserManager(models.Manager):
             result['errors'].append('Invalid password')
         if post['password_confirmation'] != post['password']:
             result['errors'].append('Invalid Confirmation')
-
         return result
     # END REGISTER VALIDATE
     def create_user(self, post):
@@ -43,3 +42,4 @@ class User(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     objects = UserManager()
+# REVIEWS MODEL

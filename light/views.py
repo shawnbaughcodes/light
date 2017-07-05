@@ -18,8 +18,8 @@ def process(request):
             messages.error(request, error)
         return redirect('/#light')
     else:
-        # user = User.objects.create_user(request.POST)
-        # request.session['user_id'] = user.id
+        user = User.objects.create_user(request.POST)
+        request.session['user_id'] = user.id
         return redirect('/home')
 # LOGIN
 def login(request):
@@ -37,5 +37,20 @@ def logout(request):
     return redirect('/')
 # HOME
 def home(request):
-    return render(request, 'light/home.html')
+    if not current_user:
+        return redirect('/')
+    user = current_user(request)
+    context = {
+    'current_user': user
+    }
+    return render(request, 'light/home.html', context)
 # END HOME
+# REVIEWS
+def reviews(request):
+    if not current_user:
+        return redirect('/')
+    user = current_user(request)
+    context = {
+    'current_user': user
+    }
+    return render(request, 'light/reviews.html', context)

@@ -24,7 +24,7 @@ class UserManager(models.Manager):
         #  END CREATE USER
     def login_validate(self, post):
         user = User.objects.filter(email=post.get('email')).first()
-        if user and bcrypt.hashpw(post.get('password').encode(), user.password.encode() == user.password):
+        if user and bcrypt.hashpw(post.get('password').encode(), user.password.encode()) == user.password:
             return {'status': True, 'user': user}
         else:
             return {'status': False, 'message': 'Invalid credentials.'}
@@ -45,6 +45,7 @@ class User(models.Model):
 # REVIEWS MODEL
 class Review(models.Model):
     content = models.CharField(max_length=1000)
+    file = models.FileField()
     user = models.ForeignKey(User, related_name='reviews')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

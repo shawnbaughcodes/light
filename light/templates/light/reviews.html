@@ -3,9 +3,62 @@
 <div class="main_reviews_container">
     <div class="popular_reviews">
         <h1>Most Popular Reviews</h1>
+        <!-- LOOP FOR REVIEWS -->
+        <div class="col s12 m8 offset-m2 l6 offset-l3">
+        <div class="card-panel grey lighten-5 z-depth-1">
+          <div class="row valign-wrapper">
+            <div class="col s2">
+                {% load static from staticfiles %}
+              <img src="{%static 'light/img/light_user_default.jpg'%}" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
+            </div>
+            <div class="col s10">
+              <span class="black-text">
+                This is a square image. Add the "circle" class to it to make it appear circular.
+              </span>
+              <br>
+              <a href="#">Like</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END LOOP -->
+    </div>
+    <div id="new_review">
+        <a class="new_review btn btn-floating btn-large cyan pulse"><i class="material-icons">mode_edit</i></a>
+        <div id="review_form" hidden>
+            <form action="create_review" method="post">
+                <div class="">
+                    File:
+                    <input type="file" name="file">
+                </div>
+                <div class="">
+                    Review:
+                    <textarea name="content" rows="10" cols="20"></textarea>
+                </div>
+            </form>
+        </div>
     </div>
     <div class="all_reviews">
         <h1>All Reviews</h1>
+        <!-- LOOP FOR REVIEWS -->
+        <div class="col s12 m8 offset-m2 l6 offset-l3">
+        <div class="card-panel grey lighten-5 z-depth-1">
+          <div class="row valign-wrapper">
+            <div class="col s2">
+                {% load static from staticfiles %}
+              <img src="{%static 'light/img/light_user_default.jpg'%}" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
+            </div>
+            <div class="col s10">
+              <span class="black-text">
+                This will be a dynamic review for a users review.
+              </span>
+              <br>
+              <a href="#">Like</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END LOOP -->
     </div>
 </div>
 {%endblock%}

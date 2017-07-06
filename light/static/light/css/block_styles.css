@@ -70,7 +70,7 @@ body {
 }
 .popular_reviews {
     width: 40vw;
-    height: 45vh;
+    height: 55vh;
     background: yellow;
     display: inline-block;
     vertical-align: top;
@@ -87,10 +87,20 @@ body {
     background: pink;
     display: inline-block;
     margin-top: 10%;
-    margin-left: 5%;
+    margin-left: 2%;
     vertical-align: bottom;
 }
 .all_reviews h1 {
     text-align: center;
     margin-top: 2%;
+}
+#new_review {
+	display: inline-block;
+	vertical-align: top;
+	float: right;
+	margin-right: 1%;
+	margin-top: 1%;
+}
+.new_review {
+	margin-left: 2%;
 }

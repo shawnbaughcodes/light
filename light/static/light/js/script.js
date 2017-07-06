@@ -13,4 +13,8 @@ $(document).ready(function() {
              //Stuff to do *after* the animation takes place
          })
      })
+     $('a.new_review').click(function(){
+         $('.new_review').hide('fast')
+         $('#review_form').show('fast')
+     })
 });

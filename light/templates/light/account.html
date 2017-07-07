@@ -1,0 +1,12 @@
+{%extends 'light/block_content.html'%}
+{%block content%}
+<div class="account_page">
+    <h1>{{current_user.name}}'s Account</h1>
+    <h4>{{current_user.email}}</h4>
+    <h4>Reviews: {{current_user.reviews.all|length}}</h4>
+    <h4>Likes: {{current_user.likes.all|length}}</h4>
+    <h6>Account Created On: {{current_user.created_at.month}}/{{current_user.created_at.day}}/{{current_user.created_at.year}}</h6>
+    <a href="/delete/{{current_user.id}}" class="waves-effect waves-light btn blue">Delete Account</a>
+    <a href="/home" class="waves-effect waves-light btn blue">Home</a>
+</div>
+{%endblock%}

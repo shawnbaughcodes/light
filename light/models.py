@@ -34,6 +34,12 @@ class UserManager(models.Manager):
             request.session['user_id': user.id]
     # END LOGIN
 # END USER MANAGER
+# REVIEWS MANAGER
+class ReviewManager(models.Manager):
+    def create_review(self, post, user):
+        review = Review.objects.create(media=post.get('media'), content=post.get('content'), user=user)
+        return review
+#END REVIEWS MANAGER
 # USER MODEL
 class User(models.Model):
     name = models.CharField(max_length=255)
@@ -44,8 +50,10 @@ class User(models.Model):
     objects = UserManager()
 # REVIEWS MODEL
 class Review(models.Model):
+    media = models.FileField(default='')
     content = models.CharField(max_length=1000)
-    file = models.FileField()
-    user = models.ForeignKey(User, related_name='reviews')
+    user = models.ForeignKey(User, related_name='reviews', on_delete=models.CASCADE)
+    liked_by = models.ManyToManyField(User, related_name='likes')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    objects = ReviewManager()

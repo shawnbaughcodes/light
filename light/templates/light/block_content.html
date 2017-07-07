@@ -9,10 +9,14 @@
 
         {%load staticfiles%}
         <link rel="stylesheet" href="{% static '/light/css/block_styles.css' %}">
+        <script type="text/javascript" src="{% static '/light/js/script.js' %}">
+
+        </script>
         <title>Light</title>
     </head>
     <body>
         {%block content%}
         {%endblock%}
+        <a href="/logout/{{current_user.id}}" class="waves-effect waves-light btn blue">Logout</a>
     </body>
 </html>

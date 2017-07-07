@@ -2,14 +2,13 @@
 {%block content%}
 <!-- <h1>Something</h1>  -->
 <div class="main_container">
-    <div class="home_container">
-
-    </div>
     <div class="reviews_container">
         <a href="/reviews"><h1>Reviews</h1></a>
     </div>
-    <div class="account_container">
-        
-    </div>
+    <a href="/account/{{current_user.id}}">
+        <div class="account_container card blue darken-1">
+            <h1>Account</h1>
+        </div>
+    </a>
 </div>
 {%endblock%}

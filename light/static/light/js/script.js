@@ -14,7 +14,15 @@ $(document).ready(function() {
          })
      })
      $('a.new_review').click(function(){
-         $('.new_review').hide('fast')
-         $('#review_form').show('fast')
+         $('div.all_reviews').slideUp('fast', function() {
+             $('#review_form').show('slow')
+             //Stuff to do *after* the animation takes place
+         })
+     })
+     $('a.cancel').click(function(){
+         $('#review_form').hide('fast')
+         $('.all_reviews').slideDown('slow', function() {
+             //Stuff to do *after* the animation takes place
+         })
      })
 });

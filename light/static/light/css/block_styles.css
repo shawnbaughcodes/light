@@ -56,43 +56,57 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    width: 45vw;
+    width: 25vw;
     height: 20vh;
     margin: 1%;
+	margin-top: 15%;
     display: inline-block;
     box-shadow: 5px 5px 5px black;
     overflow: hidden;
 }
+.account_container h1 {
+	color: white;
+	padding-top: 5%;
+
+}
 /*REVIEWS PAGE EDITS*/
 .main_reviews_container {
     width: 100vw;
-    height: 100vh;
+    height: 95vh;
 }
 .popular_reviews {
     width: 40vw;
-    height: 55vh;
-    background: yellow;
+    height: 80vh;
+    background: black;
     display: inline-block;
     vertical-align: top;
     margin-top: 2%;
     margin-left: 3%;
+	border-radius: 10px;
+	overflow: hidden;
 }
 .popular_reviews h1 {
     text-align: center;
     margin-top: 2%;
+	color: white;
 }
 .all_reviews {
     width: 50vw;
-    height: 65vh;
-    background: pink;
+    height: 75vh;
+    background: black;
     display: inline-block;
-    margin-top: 10%;
+    margin-top: 7%;
     margin-left: 2%;
-    vertical-align: bottom;
+    vertical-align: top;
+	overflow: hidden;
+	overflow-y: scroll;
+	border-radius: 10px;
 }
 .all_reviews h1 {
     text-align: center;
     margin-top: 2%;
+	color: white;
+	/*position: fixed;*/
 }
 #new_review {
 	display: inline-block;
@@ -103,4 +117,27 @@ body {
 }
 .new_review {
 	margin-left: 2%;
+}
+div#review_form {
+	background: #EEF0F2;
+	border-radius: 10px;
+	height: 21.5vh;
+	width: 20vw;
+}
+#review_form textarea {
+	background: white;
+	border-radius: 10px;
+	padding-bottom: 30%;
+	font-size: 15px;
+}
+#review_form form {
+	margin: 2%;
+}
+.account_page {
+	text-align: center;
+	color: white;
+	margin-top: 10%;
+}
+.account_page a {
+	margin-top: 3%;
 }

@@ -82,14 +82,22 @@
   }
 }
 .middle {
-	height: 70vh;
+	max-height: 70vh;
 	width: 100%;
-	background: black;
+	/*background: black;*/
+	text-align: center;
+	padding: 4%;
+}
+.card {
+	width: 30vw;
+	vertical-align: top;
+	/*margin-top: 5%;*/
+}
+.row {
+	display: inline-block;
 }
 .bottom {
-	height: 30vh;
-	width: 100%;
-	background: pink;
+	width: 100vw;
 }
 /*LOGIN AND REGISTRATION STYLES*/
 .reg_and_login_container {

@@ -4,23 +4,43 @@
         <meta charset="utf-8">
         {%load staticfiles%}
         <link rel="stylesheet" href="{% static 'light/css/styles.css' %}">
+        <!-- MATERIALIZE -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+        <!-- FONT AWESOME -->
+        <script src="https://use.fontawesome.com/8e15a18710.js"></script>
         <!-- JQUERY -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <!-- SCRIPT PAGE -->
         <script type="text/javascript" src="{% static 'light/js/script.js' %}">
-
         </script>
-
         <title>Light</title>
     </head>
     <body>
+
         <div class="index_container">
-            <a name="light"></a>
-            <div class="heading_container">
-                <h1>Light</h1>
-                <a href="#enter">
-                    <h3 id="enter_button">Enter</h3>
-                </a>
+            <div class="top">
+                <nav class="transparent">
+                    <div class="nav-wrapper">
+                      <a href="#" class="brand-logo right">Light</a>
+                      <ul id="nav-mobile" class="left hide-on-med-and-down">
+                        <li><a id="enter_button" href="#enter">Login/Register</a></li>
+                      </ul>
+                    </div>
+                  </nav>
+                  <div class="title">
+                      <div class="">
+                          <h1>Light</h1>
+                          <h4>Reviews of Concerts and Venues</h4>
+                          <a id="arrow"><i class="fa fa-arrow-circle-down fa-6x arrow bounce" aria-hidden="true"></i></a>
+                      </div>
+                  </div>
+            </div>
+            <div class="middle">
+
+            </div>
+            <div class="bottom">
+
             </div>
         </div>
         <!-- REGISTERATION AND LOGIN -->

@@ -35,7 +35,7 @@ def login(request):
             messages.error(request, is_valid['message'])
             return redirect('/')
 # LOGOUT
-def logout(request):
+def logout(request  ):
     request.session.clear()
     return redirect('/')
 # HOME

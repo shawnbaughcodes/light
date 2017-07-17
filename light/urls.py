@@ -5,7 +5,7 @@ urlpatterns = [
     url(r'^$', views.index),
     url(r'^process$', views.process),
     url(r'^home$', views.home),
-    url(r'^logout/(?P<id>\d+)$', views.logout),
+    url(r'^logout$', views.logout),
     url(r'^reviews$', views.reviews),
     url(r'^login$', views.login),
     url(r'^create_review$', views.create_review),

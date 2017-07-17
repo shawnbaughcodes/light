@@ -7,32 +7,89 @@
 /*END RESET*/
 /*INDEX EDITS*/
 .index_container {
-    height: 100vh;
+    /*height: 100vh;*/
     width: 100vw;
-    background: url('../img/light_bg.jpg');
+}
+.top {
+	height: 100vh;
+	width: 100vw;
+	background: url('../img/light_bg.jpg');
     background-size: cover;
 }
-.heading_container {
-    padding-top: 20%;
-    /*margin-left: 25%;*/
-    text-align: center;
+.title {
+	text-align: center;
+	margin-top: 35vh;
 }
-.heading_container h1 {
-    font-size: 80pt;
+#arrow {
+	font-size: 70pt;
 }
-.heading_container h3 {
-    font-size: 20pt;
-    color: white;
+
+#arrow i {
+	color: white;
+	margin-top: 20vh;
 }
-#enter_button {
-    background: #2D3047;
-    display: inline-block;
-    padding: 0.5%;
-    border-radius: 10px;
-    margin-top: 1%;
+.bounce {
+	-moz-animation: bounce 2s infinite;
+	-webkit-animation: bounce 2s infinite;
+	animation: bounce 2s infinite;
 }
-#enter_button:hover {
-    cursor: pointer;
+@-moz-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -moz-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  60% {
+    -moz-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+@-webkit-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  60% {
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -moz-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  60% {
+    -moz-transform: translateY(-15px);
+    -ms-transform: translateY(-15px);
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+.middle {
+	height: 70vh;
+	width: 100%;
+	background: black;
+}
+.bottom {
+	height: 30vh;
+	width: 100%;
+	background: pink;
 }
 /*LOGIN AND REGISTRATION STYLES*/
 .reg_and_login_container {

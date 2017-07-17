@@ -86,7 +86,7 @@
 	width: 100%;
 	/*background: black;*/
 	text-align: center;
-	padding: 4%;
+	padding: 3%;
 }
 .card {
 	width: 30vw;
@@ -100,53 +100,13 @@
 	width: 100vw;
 }
 /*LOGIN AND REGISTRATION STYLES*/
-.reg_and_login_container {
-    width: 100vw;
-    height:100vh;
-    background: #2D3047;
+#my_popup .row {
+	text-align: center;
+	width: 20vw;
 }
-.register {
-    background: #EEF0F2;
-    display: inline-block;
-    border: 1px solid black;
-    border-radius: 5px;
-    width: 20vw;
-    height: 20vh;
-    /*text-align: center;*/
-    margin-top: 20%;
-    margin-left: 23.5%;
-    padding: 1%
-}
-#red {
-    color: red;
-}
-.login {
-    background: #EEF0F2;
-    display: inline-block;
-    border: 1px solid black;
-    border-radius: 5px;
-    vertical-align: top;
-    width: 20vw;
-    height: 20vh;
-    /*text-align: center;*/
-    margin-top: 20%;
-    margin-left: 10%;
-    padding: 1%;
-}
-#cancel_button {
-    margin-top: 2%;
-    text-align: center;
-    display: inline-block;
-    margin-left: 45%;
-    background: #EEF0F2;
-    padding-left: 3%;
-    padding-right: 3%;
-    border-radius: 10px;
-}
-#cancel_button a h1 {
-    color: black;
-}
-#cancel_button:hover {
-    cursor: pointer;
-
+.popup_content {
+	padding-top: 3%;
+	background: white;
+	width: 21vw;
+	border-radius: 5px;
 }

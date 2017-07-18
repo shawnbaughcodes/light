@@ -21,7 +21,23 @@
           <div class="container">
               <p id="friends">Friends</p>
               <div class="friends">
+                <table class="bordered highlight">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Unfriend</th>
+                        </tr>
+                    </thead>
 
+                    <tbody>
+                        {%for friend in friends%}
+                        <tr>
+                            <td>{{friend.name}}</td>
+                            <td><a href="/unfriend/{{friend.id}}">Unfriend</a></td>
+                        </tr>
+                        {%endfor%}
+                    </tbody>
+                </table>
               </div>
           </div>
 
@@ -32,10 +48,11 @@
             <!-- ALL REVIEWS -->
             <h5>All Reviews</h5>
             <div class="all_reviews">
-                <table class="bordered">
+                <table class="bordered highlight">
                     <thead>
                       <tr>
                           <th>Name</th>
+
                           <th>Content</th>
                           <th>Likes</th>
                       </tr>
@@ -43,7 +60,16 @@
                     <tbody>
                         {%for review in reviews%}
                       <tr>
-                        <td>{{review.user.name}}</td>
+                        <td>{{review.user.name}}
+                            {%for friend in friends%}
+                                {%if review.user.id != friend.id %}
+                                <a href="/add/{{review.user.id}}">Add</a>
+                                {%else%}
+                                <!-- <a href="#"></a> -->
+                                {%endif%}
+                            {%endfor%}
+                        </td>
+
                         <td>{{review.content}}</td>
                         <td>
                             {%if current_user not in review.liked_by.all %}
@@ -71,7 +97,13 @@
                     <tbody>
                         {%for review in popular_reviews%}
                       <tr>
-                        <td>{{review.user.name}}</td>
+                        <td>{{review.user.name}}
+                            {%for friend in friends%}
+                                {%if review.user.id != friend.id %}
+                                <a href="/add/{{review.user.id}}">Add</a>
+                                {%endif%}
+                            {%endfor%}
+                        </td>
                         <td>{{review.content}}</td>
                         <td>
                             {%if current_user not in review.liked_by.all %}
@@ -99,8 +131,8 @@
                 <div class="input-field col s12">
                     <select name="topic">
                         <option value="" disabled selected>Choose your topic</option>
-                        <option value="1">Bar/Venue</option>
-                        <option value="2">Concert</option>
+                        <option value="Bar/Venue">Bar/Venue</option>
+                        <option value="Concert">Concert</option>
                     </select>
                 </div>
                 <div class="row">

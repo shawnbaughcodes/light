@@ -137,16 +137,16 @@
                     {%endfor%}
                 </form>
                 <!-- LOGIN -->
-                <form action="/login" class="col s12 login" method="post" hidden>
+                <form action="/login" class="col s12 login_form" method="post" hidden>
                     {% csrf_token %}
                     <div class="row">
                         <div class="input-field col s12">
-                            <input placeholder="Email" id="email" type="email" class="validate" name="email">
+                            <input placeholder="Email" id="email" type="email" name="email" class="validate">
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <input placeholder="Password" id="password" type="password" class="validate" name="password">
+                            <input placeholder="Password" id="password" type="password" name="password" class="validate">
                         </div>
                     </div>
                     <div class="row">

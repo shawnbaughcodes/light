@@ -28,12 +28,12 @@ def process(request):
 def login(request):
     is_valid = User.objects.login_validate(request.POST)
     if is_valid['status'] == True:
-        request.session['user.id'] = is_valid['user'].id
+        request.session['user_id'] = is_valid['user'].id
         return redirect('/home')
     else:
         if is_valid['status'] == False:
             messages.error(request, is_valid['message'])
-            return redirect('/')
+            return redirect('/home')
 # LOGOUT
 def logout(request  ):
     request.session.clear()
@@ -47,23 +47,12 @@ def home(request):
         'current_user': user,
         'reviews': Review.objects.all().order_by('-created_at'),
         'popular_reviews': popular_reviews,
+        'friends': user.friends.all()
         }
 
         return render(request, 'light/home.html', context)
     return redirect('/')
 # END HOME
-# REVIEWS
-# def reviews(request):
-#     if not current_user:
-#         return redirect('/')
-#     user = current_user(request)
-#     popular_reviews = Review.objects.annotate(num_likes=Count('liked_by')).order_by('-num_likes')[:3]
-#     context = {
-#     'current_user': user,
-#     'reviews': Review.objects.all().order_by('-created_at'),
-#     'popular_reviews': popular_reviews,
-#     }
-#     return render(request, 'light/reviews.html', context)
 # CREATE REVIEWS
 def create_review(request):
     user = current_user(request)
@@ -89,8 +78,17 @@ def account(request, id):
         'reviews': reviews,
     }
     return render(request, 'light/account.html', context)
-# DELETE
+# DELETE ACCOUNT
 def delete(request, id):
     user = current_user(request)
     user.delete()
     return redirect('/')
+# ADD FRIEND
+def add(request, id):
+    user = current_user(request)
+    user.friends.add(id)
+    return redirect('/home')
+def unfriend(request, id):
+    user = current_user(request)
+    user.friends.remove(id)
+    return redirect('/home')

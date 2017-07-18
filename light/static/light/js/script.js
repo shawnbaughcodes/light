@@ -5,11 +5,11 @@ $(document).ready(function() {
      $('ul.tabs').tabs();
      $('#my_popup').on('click', '.login_btn', function() {
          $('.register').hide();
-         $('.login').show()
+         $('.login_form').show()
      })
      $('#my_popup').on('click', '.register_btn', function() {
          $('.register').show();
-         $('.login').hide()
+         $('.login_form').hide()
      })
     //  $('h1#cancel_button').click(function(){
     //      $('.reg_and_login_container').slideUp('slow', function() {

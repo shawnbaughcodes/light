@@ -13,4 +13,6 @@ urlpatterns = [
     url(r'^unlike/(?P<id>\d+)$', views.unlike),
     url(r'^account/(?P<id>\d+)$', views.account),
     url(r'^delete/(?P<id>\d+)$', views.delete),
+    url(r'^add/(?P<id>\d+)$', views.add),
+    url(r'^unfriend/(?P<id>\d+)$', views.unfriend),
 ]

@@ -99,7 +99,7 @@
                 </footer>
             </div>
         </div>
-        <!-- REGISTERATION AND LOGIN -->
+        <!-- REGISTERATION -->
         <div id="my_popup">
             <div class="row">
                 <button class="btn register_btn">Registration</button>
@@ -137,7 +137,7 @@
                     {%endfor%}
                 </form>
                 <!-- LOGIN -->
-                <form hidden action="/login" class="col s12 login" method="post">
+                <form action="/login" class="col s12 login" method="post" hidden>
                     {% csrf_token %}
                     <div class="row">
                         <div class="input-field col s12">
@@ -156,7 +156,6 @@
                         </div>
                     </div>
                 </form>
-
             </div>
         </div>
     </body>

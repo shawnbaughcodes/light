@@ -37,19 +37,21 @@ class UserManager(models.Manager):
 # REVIEWS MANAGER
 class ReviewManager(models.Manager):
     def create_review(self, post, user):
-        review = Review.objects.create(media=post.get('media'), content=post.get('content'), user=user)
+        review = Review.objects.create(media=post.get('media'), topic=post.get('topic'), content=post.get('content'), user=user)
         return review
 #END REVIEWS MANAGER
 # USER MODEL
 class User(models.Model):
     name = models.CharField(max_length=255)
     email = models.EmailField(max_length=300)
+    friends = models.ManyToManyField('self')
     password = models.CharField(max_length=400)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     objects = UserManager()
 # REVIEWS MODEL
 class Review(models.Model):
+    topic = models.CharField(max_length=255)
     media = models.FileField(default='')
     content = models.CharField(max_length=1000)
     user = models.ForeignKey(User, related_name='reviews', on_delete=models.CASCADE)

@@ -42,42 +42,44 @@ def logout(request  ):
 def home(request):
     if 'user_id' in request.session:
         user = current_user(request)
-
+        popular_reviews = Review.objects.annotate(num_likes=Count('liked_by')).order_by('-num_likes')[:3]
         context = {
-        'current_user': user
+        'current_user': user,
+        'reviews': Review.objects.all().order_by('-created_at'),
+        'popular_reviews': popular_reviews,
         }
 
         return render(request, 'light/home.html', context)
     return redirect('/')
 # END HOME
 # REVIEWS
-def reviews(request):
-    if not current_user:
-        return redirect('/')
-    user = current_user(request)
-    popular_reviews = Review.objects.annotate(num_likes=Count('liked_by')).order_by('-num_likes')[:3]
-    context = {
-    'current_user': user,
-    'reviews': Review.objects.all().order_by('-created_at'),
-    'popular_reviews': popular_reviews,
-    }
-    return render(request, 'light/reviews.html', context)
+# def reviews(request):
+#     if not current_user:
+#         return redirect('/')
+#     user = current_user(request)
+#     popular_reviews = Review.objects.annotate(num_likes=Count('liked_by')).order_by('-num_likes')[:3]
+#     context = {
+#     'current_user': user,
+#     'reviews': Review.objects.all().order_by('-created_at'),
+#     'popular_reviews': popular_reviews,
+#     }
+#     return render(request, 'light/reviews.html', context)
 # CREATE REVIEWS
 def create_review(request):
     user = current_user(request)
     review = Review.objects.create_review(request.POST, user)
-    return redirect('/reviews')
+    return redirect('/home')
 # LIKE REVIEWS
 def like(request, id):
     user = current_user(request)
     review = Review.objects.get(id=id)
     review.liked_by.add(user.id)
-    return redirect('/reviews')
+    return redirect('/home')
 def unlike(request, id):
     user = current_user(request)
     review = Review.objects.get(id=id)
     review.liked_by.remove(user.id)
-    return redirect('/reviews')
+    return redirect('/home')
 # ACCOUNT
 def account(request, id):
     user = current_user(request)

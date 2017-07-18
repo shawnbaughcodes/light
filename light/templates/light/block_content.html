@@ -6,6 +6,8 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+        <!-- JQUERY OVERLAY -->
+        <script src="https://cdn.rawgit.com/vast-engineering/jquery-popup-overlay/1.7.13/jquery.popupoverlay.js"></script>
 
         {%load staticfiles%}
         <link rel="stylesheet" href="{% static '/light/css/block_styles.css' %}">
@@ -17,6 +19,5 @@
     <body>
         {%block content%}
         {%endblock%}
-        <a href="/logout" class="waves-effect waves-light btn blue">Logout</a>
     </body>
 </html>

@@ -1,5 +1,6 @@
 $(document).ready(function() {
      // Stuff to do as soon as the DOM is ready
+     $('select').material_select();
      $('#my_popup').popup();
      $('ul.tabs').tabs();
      $('#my_popup').on('click', '.login_btn', function() {

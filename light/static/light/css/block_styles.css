@@ -5,139 +5,77 @@
 	border: 0;
 	}
 body {
-    background: #2D3047;
+    background: #F4F3EE;
     overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-y: hidden;
+}
+#new_btn {
+	cursor: pointer;
 }
 .main_container {
-    text-align: center;
 }
-.home_container {
-    background: url('../img/light_home_icon.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 20vw;
-    height: 50vh;
-    margin: 1%;
-    display: inline-block;
-    overflow: hidden;
-
-}
-.reviews_container {
-    background: url('../img/light_review_bg.jpg');
-    background-size: cover;
-    background-position: center;
-    box-shadow: 5px 5px 5px black;
-    width: 35vw;
-    height: 70vh;
-    margin: 1%;
-    display: inline-block;
-    vertical-align: top;
-    /*overflow: hidden;*/
-}
-.reviews_container h1 {
-    margin-top: 40%;
-    background: #5D576B;
-    opacity: 0.9;
-    border-radius: 20px;
-    /*color: white;*/
-    font-size: 100pt;
-
-}
-.reviews_container a {
-    color: inherit;
-    text-decoration: none;
-}
-.reviews_container h1:hover {
-    cursor: pointer;
-}
-.account_container {
-    background: url('../img/light_account_icon.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 25vw;
-    height: 20vh;
-    margin: 1%;
-	margin-top: 15%;
-    display: inline-block;
-    box-shadow: 5px 5px 5px black;
-    overflow: hidden;
-}
-.account_container h1 {
-	color: white;
-	padding-top: 5%;
-
-}
-/*REVIEWS PAGE EDITS*/
-.main_reviews_container {
-    width: 100vw;
-    height: 95vh;
-}
-.popular_reviews {
-    width: 40vw;
-    height: 80vh;
-    background: black;
-    display: inline-block;
-    vertical-align: top;
-    margin-top: 2%;
-    margin-left: 3%;
-	border-radius: 10px;
-	overflow: hidden;
-}
-.popular_reviews h1 {
-    text-align: center;
-    margin-top: 2%;
-	color: white;
-}
-.all_reviews {
-    width: 50vw;
-    height: 75vh;
-    background: black;
-    display: inline-block;
-    margin-top: 7%;
-    margin-left: 2%;
-    vertical-align: top;
-	overflow: hidden;
-	overflow-y: scroll;
-	border-radius: 10px;
-}
-.all_reviews h1 {
-    text-align: center;
-    margin-top: 2%;
-	color: white;
-	/*position: fixed;*/
-}
-#new_review {
-	display: inline-block;
-	vertical-align: top;
-	float: right;
-	margin-right: 1%;
-	margin-top: 1%;
+.account {
+	text-align: center;
+	max-width: 30vw;
+	background: #000411;
+	height: 100vh;
 }
 .new_review {
-	margin-left: 2%;
-}
-div#review_form {
-	background: #EEF0F2;
-	border-radius: 10px;
-	height: 21.5vh;
-	width: 20vw;
-}
-#review_form textarea {
+	/*padding-top: 2%*/
 	background: white;
+	height: 37vh;
+	width: 21vw;
 	border-radius: 10px;
-	padding-bottom: 30%;
-	font-size: 15px;
+	max-height: 40vh;
+	overflow: scroll;
 }
-#review_form form {
-	margin: 2%;
-}
-.account_page {
+.new_review h5 {
 	text-align: center;
-	color: white;
-	margin-top: 10%;
 }
-.account_page a {
+.review_submit {
+	text-align: center;
+}
+.user_info {
+	text-align: left;
+	color: white;
+	margin-left: 37%;
+}
+
+td {
+	max-width: 30vw;
+}
+.logo {
+	margin-top: 7%;
+	color: white;
+}
+.friends {
+	height: 40vh;
+	background: white;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+#friends {
+	margin-top: 10%;
+	color: white;
+	text-align: left;
+}
+.content {
+	max-width: 80vw;
+	background: #F5F7F6;
+	height: 100vh;
+	overflow: scroll;
+}
+.all_reviews {
 	margin-top: 3%;
+	height: 50vh;
+	border: solid black 1px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+.popular_reviews {
+	margin-top: 3%;
+	height: 30vh;
+	border: solid black 1px;
+	overflow-x: hidden;
+	overflow-y: scroll;
 }

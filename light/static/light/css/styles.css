@@ -13,20 +13,33 @@
 .top {
 	height: 100vh;
 	width: 100vw;
-	background: url('../img/light_bg.jpg');
+	background: url('../img/light_bg.png');
     background-size: cover;
 }
 .title {
 	text-align: center;
-	margin-top: 35vh;
+	margin-top: 27vh;
+}
+.title h1 {
+	font-family: 'Monofett', cursive;
+	font-size: 100pt;
+	color: white
+}
+.title h4 {
+	font-family: 'Josefin Slab', serif;
+	font-size: 60pt;
+	color: white;
 }
 #arrow {
 	font-size: 70pt;
+	/*opacity: 0.2;*/
+
 }
 
 #arrow i {
 	color: white;
 	margin-top: 20vh;
+	opacity: 0.2;
 }
 .bounce {
 	-moz-animation: bounce 2s infinite;

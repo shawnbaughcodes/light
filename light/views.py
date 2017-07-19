@@ -47,7 +47,8 @@ def home(request):
         'current_user': user,
         'reviews': Review.objects.all().order_by('-created_at'),
         'popular_reviews': popular_reviews,
-        'friends': user.friends.all()
+        'friends': user.friends.all(),
+        'friends_ids': user.friends.all().values_list('id', flat=True)
         }
 
         return render(request, 'light/home.html', context)

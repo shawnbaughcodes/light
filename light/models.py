@@ -52,6 +52,8 @@ class User(models.Model):
 # REVIEWS MODEL
 class Review(models.Model):
     topic = models.CharField(max_length=255)
+    location = models.CharField(max_length=255)
+    artist = models.CharField(max_length=255)
     media = models.FileField(default='')
     content = models.CharField(max_length=1000)
     user = models.ForeignKey(User, related_name='reviews', on_delete=models.CASCADE)

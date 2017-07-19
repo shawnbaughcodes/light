@@ -52,7 +52,8 @@
                     <thead>
                       <tr>
                           <th>Name</th>
-
+                          <th>Location</th>
+                          <th>Artist</th>
                           <th>Content</th>
                           <th>Likes</th>
                       </tr>
@@ -61,15 +62,14 @@
                         {%for review in reviews%}
                       <tr>
                         <td>{{review.user.name}}
-                            {%for friend in friends%}
-                                {%if review.user.id != friend.id %}
+                            {%if review.user.id not in friends_ids %}
+                                {%if current_user.id != review.user.id%}
                                 <a href="/add/{{review.user.id}}">Add</a>
-                                {%else%}
-                                <!-- <a href="#"></a> -->
                                 {%endif%}
-                            {%endfor%}
+                            {%endif%}
                         </td>
-
+                        <td>{{review.location}}</td>
+                        <td>{{review.artist}}</td>
                         <td>{{review.content}}</td>
                         <td>
                             {%if current_user not in review.liked_by.all %}
@@ -98,11 +98,11 @@
                         {%for review in popular_reviews%}
                       <tr>
                         <td>{{review.user.name}}
-                            {%for friend in friends%}
-                                {%if review.user.id != friend.id %}
+                            {%if review.user.id not in friends_ids %}
+                                {%if current_user.id != review.user.id%}
                                 <a href="/add/{{review.user.id}}">Add</a>
                                 {%endif%}
-                            {%endfor%}
+                            {%endif%}
                         </td>
                         <td>{{review.content}}</td>
                         <td>
@@ -137,8 +137,18 @@
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
+                        <input placeholder="Location" id="first_name" type="text" class="validate" name="location">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="Artist" id="artist" type="text" class="validate" name="artist">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
                         <textarea id="textarea1" class="materialize-textarea" name="content"></textarea>
-                        <label for="textarea1">Content</label>
+                        <label for="textarea1">Review</label>
                     </div>
                 </div>
                 <div class="review_submit">

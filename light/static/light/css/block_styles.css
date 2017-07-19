@@ -20,10 +20,14 @@ body {
 	background: #000411;
 	height: 100vh;
 }
+#my_popup {
+	height: 45vh;
+	
+}
 .new_review {
 	/*padding-top: 2%*/
 	background: white;
-	height: 37vh;
+	height: 45vh;
 	width: 21vw;
 	border-radius: 10px;
 	max-height: 40vh;

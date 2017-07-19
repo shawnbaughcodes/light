@@ -90,6 +90,8 @@
                     <thead>
                       <tr>
                           <th>Name</th>
+                          <th>Location</th>
+                          <th>Artist</th>
                           <th>Content</th>
                           <th>Likes</th>
                       </tr>
@@ -104,6 +106,8 @@
                                 {%endif%}
                             {%endif%}
                         </td>
+                        <td>{{review.location}}</td>
+                        <td>{{review.artist}}</td>
                         <td>{{review.content}}</td>
                         <td>
                             {%if current_user not in review.liked_by.all %}

@@ -37,7 +37,7 @@ class UserManager(models.Manager):
 # REVIEWS MANAGER
 class ReviewManager(models.Manager):
     def create_review(self, post, user):
-        review = Review.objects.create(media=post.get('media'), topic=post.get('topic'), content=post.get('content'), user=user)
+        review = Review.objects.create(media=post.get('media'), topic=post.get('topic'), location=post.get('location'), artist=post.get('artist'), content=post.get('content'), user=user)
         return review
 #END REVIEWS MANAGER
 # USER MODEL

@@ -40,6 +40,7 @@ class ReviewManager(models.Manager):
         review = Review.objects.create(media=post.get('media'), topic=post.get('topic'), location=post.get('location'), artist=post.get('artist'), content=post.get('content'), user=user)
         return review
 #END REVIEWS MANAGER
+
 # USER MODEL
 class User(models.Model):
     name = models.CharField(max_length=255)

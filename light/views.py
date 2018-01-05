@@ -2,6 +2,9 @@ from django.shortcuts import render, redirect
 from django.db.models import Count
 from .models import *
 from django.contrib import messages
+import json
+from django.http import HttpResponse, JsonResponse
+from django.core import serializers
 # Create your views here.
 # CURRENT USER
 def current_user(request):
@@ -11,7 +14,9 @@ def current_user(request):
 def index(request):
     if current_user(request):
         return redirect('/home')
-    return render(request, 'light/index.html')
+    reviews = Review.objects.all().order_by('-created_at')
+    data = serializers.serialize('json', reviews)
+    return render(request, 'light/index.html', data)
 # END INDEX
 # PROCESS
 def process(request):
@@ -50,7 +55,7 @@ def home(request):
         'friends': user.friends.all(),
         'friends_ids': user.friends.all().values_list('id', flat=True)
         }
-
+        return JsonResponse(context)
         return render(request, 'light/home.html', context)
     return redirect('/')
 # END HOME

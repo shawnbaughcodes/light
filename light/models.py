@@ -3,7 +3,6 @@ from __future__ import unicode_literals
 from django.db import models
 import re, bcrypt
 
-# Create your models here.
 # USER MANAGER
 class UserManager(models.Manager):
     def register_validate(self, post):
@@ -34,6 +33,7 @@ class UserManager(models.Manager):
             request.session['user_id': user.id]
     # END LOGIN
 # END USER MANAGER
+
 # REVIEWS MANAGER
 class ReviewManager(models.Manager):
     def create_review(self, post, user):

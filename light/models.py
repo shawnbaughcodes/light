@@ -50,6 +50,7 @@ class User(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     objects = UserManager()
+    
 # REVIEWS MODEL
 class Review(models.Model):
     topic = models.CharField(max_length=255)

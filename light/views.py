@@ -15,12 +15,10 @@ def index(request):
     if current_user(request):
         return redirect('/home')
     reviews = Review.objects.all().order_by('-created_at')
-    users = User.objects.all()
     context = {
         'reviews' : serializers.serialize('json', reviews)
     }
     return JsonResponse(context, safe=False)
-    return render(request, 'light/index.html')
 # END INDEX
 # PROCESS
 def process(request):

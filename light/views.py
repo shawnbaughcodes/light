@@ -26,7 +26,7 @@ def process(request):
     if is_valid['errors']:
         for error in is_valid['errors']:
             messages.error(request, error)
-        return redirect('/#light')
+        return redirect('/')
     else:
         user = User.objects.create_user(request.POST)
         request.session['user_id'] = user.id

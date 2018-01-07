@@ -1,0 +1,39 @@
+.card {
+    border-radius: 30px;
+    background: linear-gradient(right, #777DA7, #3A3042, #53687E);
+    overflow: hidden;
+    margin-bottom: 5vh;
+}
+#cardUser {
+    margin-top: 3%;
+    margin-left: 2%;
+    color: white;
+}
+#cardText {
+    margin-top: 1%;
+    margin-left: 2%;
+    text-align: justify;
+    color: white;
+}
+#cardImage {
+    max-height: 50vh;
+}
+#cardButtons {
+    list-style-type: none;
+    text-align: center;
+    padding-top: 1.5%;
+}
+#cardButtons a {
+    color: white;
+}
+#cardButtons a:hover {
+    text-decoration: none;
+    color: grey;
+}
+#cardButtons li {
+    display: inline;
+    text-align: center;
+    padding-left: 3%;
+    padding-right: 3%;
+    color: white;
+}

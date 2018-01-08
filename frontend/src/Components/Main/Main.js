@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+import * as actions from '../../Actions';
+
 import Header from '../Header/Header';
 import Card from '../Card/Card';
 import Footer from '../Footer/Footer';
@@ -7,17 +11,28 @@ class Main extends React.Component{
     constructor(props) {
         super(props)
     }
-    componentWillMount() {
+    state = {
+        reviews: []
     }
-
-    render(){
+    componentWillMount() {
+        this.props.getAllReviews()
+    }
+    componentWillReceiveProps = (nextProps) => {
+        console.log(nextProps.review);
+        this.setState({ reviews: nextProps.review })
+        this.allReivews(nextProps)
+    }
+    allReivews = async(nextProps) => {
+        await this.nextProps.review.map(
+            review => <Card />
+        )
+    }
+    render() {
         return(
             <div className="" id="home">
                 <Header />
                 <div className="container justify-content-center">
-                    <Card />
-                    <Card />
-                    <Card />
+                    {this.componentWillReceiveProps}
                     <Card />
                     <Card />
                     <Card />
@@ -27,4 +42,9 @@ class Main extends React.Component{
         )
     }
 }
-export default Main;
+function mapStateToProps({ review }) {
+    return {
+        review: review.reviews
+    }
+}
+export default connect(mapStateToProps, actions)(Main);
